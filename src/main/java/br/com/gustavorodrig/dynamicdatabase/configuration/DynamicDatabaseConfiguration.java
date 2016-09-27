@@ -16,10 +16,10 @@ public class DynamicDatabaseConfiguration {
     @Bean
     public DataSource dataSourceBean(Environment environment) {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/dynamicdatabase");
-        dataSource.setUsername("postgres");
-        dataSource.setPassword("postgres");
+////        dataSource.setDriverClassName("org.postgresql.Driver");
+////      dataSource.setUrl("jdbc:postgresql://localhost:5432/fake");
+////      dataSource.setUsername("fake");
+////      dataSource.setPassword("fake");
         return dataSource;
     }
 
