@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by gustavo
  */
-@Repository
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
 }
