@@ -39,6 +39,8 @@ public class ProductRepositoryTest {
 
         Iterable<Product> productsDB1 = productRepository.findAll();
 
+	System.out.println(productsDB1);
+
         DbConfig dbConfig2 = new DbConfig();
         dbConfig2.setId("BD2");
         dbConfig2.setDriverClass("org.postgresql.Driver");
@@ -48,6 +50,8 @@ public class ProductRepositoryTest {
         DbContextHolder.setDbType(dbConfig2);
 
         Iterable<Product> productsDB2 = productRepository.findAll();
+
+	System.out.println(productsDB2);
 
         assertTrue(true);
 

@@ -2,6 +2,8 @@ package br.com.gustavorodrig.dynamicdatabase.configuration;
 
 import br.com.gustavorodrig.dynamicdatabase.model.DbConfig;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 import javax.sql.DataSource;
@@ -23,10 +25,15 @@ public class RoutingDataSource extends AbstractRoutingDataSource {
     @Override
     protected DataSource determineTargetDataSource() {
         Object lookupKey = determineCurrentLookupKey();
-        DataSource dataSource = (DataSource) this.resolvedDataSources.get(lookupKey);
-        if (dataSource == null) {
-            throw new IllegalStateException("Cannot determine target DataSource for lookup key [" + lookupKey + "]");
-        }
+	DataSource dataSource;
+	if(lookupKey != null) {
+	    dataSource = (DataSource)this.resolvedDataSources.get(lookupKey);
+	    if (dataSource == null) {
+		throw new IllegalStateException("Cannot determine target DataSource for lookup key [" + lookupKey + "]");
+	    }
+	}else{
+	    dataSource = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
+	}
         return dataSource;
     }
 
@@ -48,10 +55,4 @@ public class RoutingDataSource extends AbstractRoutingDataSource {
         resolvedDataSources.put(dbConfig.getId(), dataSource);
 
     }
-
-
-
-
-
-
 }
