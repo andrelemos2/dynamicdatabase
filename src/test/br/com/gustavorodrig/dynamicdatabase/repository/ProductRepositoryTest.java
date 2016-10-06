@@ -4,14 +4,11 @@ import br.com.gustavorodrig.dynamicdatabase.Application;
 import br.com.gustavorodrig.dynamicdatabase.configuration.DbContextHolder;
 import br.com.gustavorodrig.dynamicdatabase.model.DbConfig;
 import br.com.gustavorodrig.dynamicdatabase.model.Product;
-import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import javax.validation.constraints.AssertTrue;
 
 import static junit.framework.Assert.*;
 

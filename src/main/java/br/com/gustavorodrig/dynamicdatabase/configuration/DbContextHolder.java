@@ -1,5 +1,6 @@
 package br.com.gustavorodrig.dynamicdatabase.configuration;
 
+import br.com.gustavorodrig.dynamicdatabase.configuration.persistence.RoutingDataSource;
 import br.com.gustavorodrig.dynamicdatabase.model.DbConfig;
 
 /**

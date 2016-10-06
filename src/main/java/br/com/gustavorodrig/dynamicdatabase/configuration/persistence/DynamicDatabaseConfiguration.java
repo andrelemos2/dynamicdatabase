@@ -1,4 +1,4 @@
-package br.com.gustavorodrig.dynamicdatabase.configuration;
+package br.com.gustavorodrig.dynamicdatabase.configuration.persistence;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

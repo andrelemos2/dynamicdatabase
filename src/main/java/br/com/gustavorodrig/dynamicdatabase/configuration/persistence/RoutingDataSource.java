@@ -1,5 +1,6 @@
-package br.com.gustavorodrig.dynamicdatabase.configuration;
+package br.com.gustavorodrig.dynamicdatabase.configuration.persistence;
 
+import br.com.gustavorodrig.dynamicdatabase.configuration.DbContextHolder;
 import br.com.gustavorodrig.dynamicdatabase.model.DbConfig;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
